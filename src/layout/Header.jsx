@@ -12,7 +12,7 @@ export const Header = () => {
         <nav>
           <Link
             to={'/login'}
-            className="h-[32px] px-3 rounded font-700 bg-[#FFA84C] text-white"
+            className="py-3 px-5 rounded font-700 bg-[#FFA84C] text-white"
           >
             Login
           </Link>
