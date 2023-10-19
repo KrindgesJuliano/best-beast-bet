@@ -6,9 +6,9 @@ export const Header = () => {
   return (
     <header className="bg-[#2E1B86] h-[60px]">
       <div className="container ma flex items-center h-full justify-between">
-        <a href="/" className="font-700 decoration-none text-[#FFA84C]">
-          Home
-        </a>
+        <Link href="/" className="font-700 decoration-none text-[#FFA84C]">
+          Best Beast Bet
+        </Link>
         <nav>
           <Link
             to={'/login'}
