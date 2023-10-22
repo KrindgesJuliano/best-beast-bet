@@ -4,6 +4,7 @@ import { Home } from "../modules/Home";
 import React from "react";
 import { Login } from "../modules/Auth";
 import { Layout } from "../layout";
+import ErrorPage from "./error-page";
 // import { Header } from "../layout/Header";
 
 
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     id: 'root',
     Component: Layout,
     path: '/',
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -24,9 +26,10 @@ const router = createBrowserRouter([
     ]
   },
   {
-    id: 'private',
+    id: 'public',
     path: '/login',
-    Component: Login
+    Component: Login,
+    errorElement: <ErrorPage />
   },
   {
     path: '/logout',
