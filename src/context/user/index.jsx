@@ -2,23 +2,29 @@ import { createContext, useCallback, useState, useMemo } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+const t = localStorage.getItem('token');
+const u = localStorage.getItem('idUser');
+
 const UserContext = createContext({
-  isAuthenticate: false,
-  token: '',
-  id: '',
+  // isAuthenticate: Boolean(t && u),
+  // token: t,
+  // user: u,
 });
 
 // eslint-disable-next-line react/prop-types
 const UserContextProvider = ({ children }) => {
-  const [user, setUser] = useState();
-  const [token, setToken] = useState();
+  const [user, setUser] = useState(u);
+  const [token, setToken] = useState(t);
+  // const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
 
-  const Clear = useCallback(() => {
+  const clear = useCallback(() => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('idUser');
     localStorage.clear();
   }, []);
 
   const saveUserId = useCallback((idUser) => {
-    localStorage.setItem('idUser', JSON.stringify(user));
+    localStorage.setItem('idUser', JSON.stringify(idUser));
     setUser(idUser);
   }, []);
 
@@ -34,16 +40,37 @@ const UserContextProvider = ({ children }) => {
         .then((res) => {
           saveToken(res.data.token);
           saveUserId(res.data.id);
+          // isAuthenticate();
         })
         .catch((err) => console.log(err));
     },
     [saveToken, saveUserId]
   );
 
-  const isAuthenticated = useMemo(() => Boolean(token && user), [token, user]);
+  const handleLogout = useCallback(() => {
+    console.log('deslongando...');
+    setToken('');
+    setUser('');
+    clear();
+    // isAuthenticate();
+  }, [clear]);
+
+  const isUserAuthenticated = useMemo(
+    () => Boolean(token && user),
+    [token, user]
+  );
 
   return (
-    <UserContext.Provider value={(Clear, handleLoginUser, isAuthenticated)}>
+    <UserContext.Provider
+      value={{
+        clear,
+        handleLoginUser,
+        isUserAuthenticated,
+        user,
+        token,
+        handleLogout,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

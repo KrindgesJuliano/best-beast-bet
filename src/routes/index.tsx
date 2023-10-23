@@ -1,12 +1,12 @@
-import { createBrowserRouter, redirect } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../modules/Home";
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import { Login } from "../modules/Auth";
 import { Layout } from "../layout";
 import ErrorPage from "./error-page";
+import { Logout } from "../modules/Auth/logout";
 // import { Header } from "../layout/Header";
-
 
 const router = createBrowserRouter([
   {
@@ -33,9 +33,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/logout',
-    async action() {
-      return redirect("/")
-    }
+    Component: Logout
   }
 ])
 

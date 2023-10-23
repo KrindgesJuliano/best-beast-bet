@@ -1,21 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Logo from '../../assets/lion.png';
+import UserContext from '../../context/user';
 // import Cover from '../../assets/cover.jpg';
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const { isUserAuthenticated, handleLoginUser, user } =
+    useContext(UserContext);
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    await handleLoginUser(data.login, data.senha);
+  };
 
-  console.log(watch('example'));
+  console.log(isUserAuthenticated, user);
+  useEffect(() => {
+    if (isUserAuthenticated === true) {
+      navigate('/');
+    }
+  }, [isUserAuthenticated, navigate]);
 
   return (
     <div className="bg-[#2E1B86] h-screen">
@@ -58,14 +68,14 @@ export const Login = () => {
                 {errors.login && <span>This field is required</span>}
               </div>
               <div className="flex flex-col w-md">
-                <label htmlFor="">Senha</label>
+                <label htmlFor="password">Senha</label>
                 <input
                   id="password"
-                  {...register('password', { required: true })}
+                  {...register('senha', { required: true })}
                   type="text"
                   className="h-[42px] rounded bg-light text-xl px-2 focus:outline-amber"
                 />
-                {errors.password && <span>This field is required</span>}
+                {errors.senha && <span>This field is required</span>}
               </div>
               <input
                 type="submit"
