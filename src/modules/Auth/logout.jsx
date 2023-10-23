@@ -13,6 +13,6 @@ export const Logout = () => {
     navigate('/');
   });
 
-  console.log(token, user);
+  // console.log(token, user);
   return <div>Deslongando</div>;
 };
