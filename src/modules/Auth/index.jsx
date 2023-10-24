@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
-import Logo from '../../assets/lion.png';
+// import Logo from '../../assets/lion.png';
 
 export const Auth = () => {
   return (
@@ -10,7 +10,8 @@ export const Auth = () => {
       <header className="container ma h-[5rem] flex items-center">
         {/* <h1 className="text-amber">Login</h1> */}
         <Link to="/">
-          <img src={Logo} alt="" className="object-contain" width={50} />
+          {/* <img src={Logo} alt="" className="object-contain" width={50} /> */}
+          <p className="text-amber font-700 text-lg">Best Beast Bet</p>
         </Link>
       </header>
       <section className="container m-a h-3xl bg-white rounded">

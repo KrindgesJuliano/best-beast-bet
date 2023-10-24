@@ -8,8 +8,7 @@ import UserContext from '../../context/user';
 
 export const Login = () => {
   const navigate = useNavigate();
-  const { isUserAuthenticated, handleLoginUser, user } =
-    useContext(UserContext);
+  const { isUserAuthenticated, handleLoginUser } = useContext(UserContext);
   const {
     register,
     handleSubmit,
@@ -19,7 +18,7 @@ export const Login = () => {
     await handleLoginUser(data.login, data.senha);
   };
 
-  console.log(isUserAuthenticated, user);
+  // console.log(isUserAuthenticated, user);
   useEffect(() => {
     if (isUserAuthenticated === true) {
       navigate('/');
