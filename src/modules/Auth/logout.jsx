@@ -6,7 +6,7 @@ import UserContext from '../../context/user';
 export const Logout = () => {
   const navigate = useNavigate();
 
-  const { handleLogout, token, user } = useContext(UserContext);
+  const { handleLogout } = useContext(UserContext);
 
   useEffect(() => {
     handleLogout();
