@@ -12,11 +12,16 @@ export const Header = () => {
         <Link href="/" className="font-700 decoration-none text-[#FFA84C]">
           Best Beast Bet
         </Link>
-        <nav>
+        <nav className="flex gap-2 font-700">
           {isUserAuthenticated === true ? (
-            <Link to={'/logout'} className="text-white">
-              Logout
-            </Link>
+            <>
+              <Link to={'/dashboard/profile'} className="text-amber">
+                Perfil
+              </Link>
+              <Link to={'/logout'} className="text-white">
+                Logout
+              </Link>
+            </>
           ) : (
             <Link
               to={'/login'}

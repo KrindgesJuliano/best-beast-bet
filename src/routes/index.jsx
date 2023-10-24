@@ -8,6 +8,7 @@ import ErrorPage from './error-page';
 import { Logout } from '../modules/Auth/logout';
 import { User } from '../modules/User';
 import { Login } from '../modules/Auth/login';
+import { Profile } from '../modules/User/profile';
 // import { Header } from "../layout/Header";
 
 const router = createBrowserRouter([
@@ -44,9 +45,15 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/user',
-    Component: User,
-    // children: [],
+    id: 'private',
+    path: '/dashboard',
+    Component: Layout,
+    children: [
+      {
+        path: 'profile',
+        Component: Profile,
+      },
+    ],
   },
   {
     path: '/logout',
