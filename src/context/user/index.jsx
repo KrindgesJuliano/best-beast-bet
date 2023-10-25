@@ -40,7 +40,7 @@ const UserContextProvider = ({ children }) => {
       .get(`http://localhost:3000/api/v1/usuarios/${userId}`, {
         headers: {
           Authorization: 'Bearer ' + token,
-          'user-id': '80902373-9996-4b35-bb5f-8bf5d7f0b920',
+          'user-id': userId,
         },
       })
       .then((res) => {
