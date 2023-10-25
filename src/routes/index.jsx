@@ -9,6 +9,7 @@ import { Logout } from '../modules/Auth/logout';
 import { User } from '../modules/User';
 import { Login } from '../modules/Auth/login';
 import { Profile } from '../modules/User/profile';
+import { Dashboard } from '../modules/Dashboard';
 // import { Header } from "../layout/Header";
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
     path: '/dashboard',
     Component: Layout,
     children: [
+      {
+        index: true,
+        Component: Dashboard,
+      },
       {
         path: 'profile',
         Component: Profile,

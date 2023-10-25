@@ -24,7 +24,9 @@ export const Profile = () => {
 
   return (
     <div>
-      <h1>Perfil</h1>
+      <header className="flex justify-between items-center h-[60px]">
+        <h1>Perfil</h1>
+      </header>
       <div className="flex gap-4 items-center flex-col">
         <div className="w-[100%] flex flex-col items-center h-[15rem]">
           <div className="border rounded-[100%] border-solid border-blueGray p1 object-cover">
