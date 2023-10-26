@@ -1,0 +1,129 @@
+{
+  "grupos": [
+    {
+      "grupo": 1,
+      "animal": "Avestruz",
+      "numero": "01-02-03-04"
+    },
+    {
+      "grupo": 2,
+      "animal": "Águia",
+      "numero": "05-06-07-08"
+    },
+    {
+      "grupo": 3,
+      "animal": "Burro",
+      "numero": "09-10-11-12"
+    },
+    {
+      "grupo": 4,
+      "animal": "Borboleta",
+      "numero": "13-14-15-16"
+    },
+    {
+      "grupo": 5,
+      "animal": "Cachorro",
+      "numero": "17-18-19-20"
+    },
+    {
+      "grupo": 6,
+      "animal": "Cabra",
+      "numero": "21-22-23-24"
+    },
+    {
+      "grupo": 7,
+      "animal": "Carneiro",
+      "numero": "25-26-27-28"
+    },
+    {
+      "grupo": 8,
+      "animal": "Camelo",
+      "numero": "29-30-31-32"
+    },
+    {
+      "grupo": 9,
+      "animal": "Cobra",
+      "numero": "33-34-35-36"
+    },
+    {
+      "grupo": 10,
+      "animal": "Coelho",
+      "numero": "37-38-39-40"
+    },
+    {
+      "grupo": 11,
+      "animal": "Cavalo",
+      "numero": "41-42-43-44"
+    },
+    {
+      "grupo": 12,
+      "animal": "Elefante",
+      "numero": "45-46-47-48"
+    },
+    {
+      "grupo": 13,
+      "animal": "Galo",
+      "numero": "49-50-51-52"
+    },
+    {
+      "grupo": 14,
+      "animal": "Gato",
+      "numero": "53-54-55-56"
+    },
+    {
+      "grupo": 15,
+      "animal": "Jacaré",
+      "numero": "57-58-59-60"
+    },
+    {
+      "grupo": 16,
+      "animal": "Leão",
+      "numero": "61-62-63-64"
+    },
+    {
+      "grupo": 17,
+      "animal": "Macaco",
+      "numero": "65-66-67-68"
+    },
+    {
+      "grupo": 18,
+      "animal": "Pavão",
+      "numero": "69-70-71-72"
+    },
+    {
+      "grupo": 19,
+      "animal": "Peru",
+      "numero": "73-74-75-76"
+    },
+    {
+      "grupo": 20,
+      "animal": "Touro",
+      "numero": "77-78-79-80"
+    },
+    {
+      "grupo": 21,
+      "animal": "Tigre",
+      "numero": "81-82-83-84"
+    },
+    {
+      "grupo": 22,
+      "animal": "Urso",
+      "numero": "85-86-87-88"
+    },
+    {
+      "grupo": 23,
+      "animal": "Veado",
+      "numero": "89-90-91-92"
+    },
+    {
+      "grupo": 24,
+      "animal": "Vaca",
+      "numero": "93-94-95-96"
+    },
+    {
+      "grupo": 25,
+      "animal": "Águia",
+      "numero": "97-98-99-00"
+    }
+  ]
+}

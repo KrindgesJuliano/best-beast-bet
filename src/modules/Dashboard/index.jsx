@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
+import Grupos from '../../assets/grups.json';
+
 export const Dashboard = () => {
   return (
     <div>
@@ -11,6 +13,15 @@ export const Dashboard = () => {
           <span className="text-green text-xl font-700">350</span>
         </div>
       </header>
+      <div className="grid grid-cols-4">
+        {Grupos.grupos.map((grupo) => (
+          <div key={grupo.numero}>
+            {grupo.numero}
+            {grupo.animal}
+            {grupo.numero}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
