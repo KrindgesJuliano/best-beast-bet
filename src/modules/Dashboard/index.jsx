@@ -13,12 +13,21 @@ export const Dashboard = () => {
           <span className="text-green text-xl font-700">350</span>
         </div>
       </header>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-4 gap-4 mt-4">
         {Grupos.grupos.map((grupo) => (
-          <div key={grupo.numero}>
-            {grupo.numero}
-            {grupo.animal}
-            {grupo.numero}
+          <div
+            key={grupo.numero}
+            className="bg-[#c4c4c4] w-[100%] h-[10rem] rounded cursor-pointer"
+          >
+            <div className="text-white flex flex-col justify-between h-full">
+              <span className="font-700 text-4xl p2 text-black">
+                {grupo.grupo}
+              </span>
+              <div className="bg-[#2E1B86] w-[100%] p2 flex justify-between">
+                <span className="text-xl">{grupo.animal}</span>
+                <span className="text-xl">{grupo.numero}</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>

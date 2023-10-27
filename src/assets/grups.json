@@ -87,42 +87,42 @@
     },
     {
       "grupo": 18,
-      "animal": "Pavão",
+      "animal": "Porco",
       "numero": "69-70-71-72"
     },
     {
       "grupo": 19,
-      "animal": "Peru",
+      "animal": "Pavão",
       "numero": "73-74-75-76"
     },
     {
       "grupo": 20,
-      "animal": "Touro",
+      "animal": "Peru",
       "numero": "77-78-79-80"
     },
     {
       "grupo": 21,
-      "animal": "Tigre",
+      "animal": "Touro",
       "numero": "81-82-83-84"
     },
     {
       "grupo": 22,
-      "animal": "Urso",
+      "animal": "Tigre",
       "numero": "85-86-87-88"
     },
     {
       "grupo": 23,
-      "animal": "Veado",
+      "animal": "Urso",
       "numero": "89-90-91-92"
     },
     {
       "grupo": 24,
-      "animal": "Vaca",
+      "animal": "Veado",
       "numero": "93-94-95-96"
     },
     {
       "grupo": 25,
-      "animal": "Águia",
+      "animal": "Vaca",
       "numero": "97-98-99-00"
     }
   ]
