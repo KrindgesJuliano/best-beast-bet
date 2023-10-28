@@ -3,10 +3,15 @@ import axios from 'axios';
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useEffect, useState } from 'react';
 import UserContext from '../../context/user';
+import WalletContext from '../../context/wallet';
 import Logo from '../../assets/lion.png';
+import { DateConverter } from '../../utils/dateConverte';
 
 export const Profile = () => {
-  const { handleGetUser, user } = useContext(UserContext);
+  const { handleGetUser, user, userId } = useContext(UserContext);
+  const { wallet, walletStatement, handleGetWalletStatement } =
+    useContext(WalletContext);
+
   const [loading, setLoading] = useState(true);
 
   // console.log(user, token);
@@ -14,10 +19,12 @@ export const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       handleGetUser();
+      handleGetWalletStatement(userId);
     };
     fetchData().catch((err) => console.log(err));
     setLoading(false);
-  }, [handleGetUser]);
+  }, [handleGetUser, handleGetWalletStatement, userId]);
+
   if (loading) {
     return <p>carregando</p>;
   }
@@ -47,7 +54,7 @@ export const Profile = () => {
           <div className="flex justify-around border-b border-solid border-[#c4c4c4] p-4">
             <div className="flex flex-col items-center">
               <h3 className="text-coolGray">Total Carteira</h3>
-              <span className="text-4xl text-center">350</span>
+              <span className="text-4xl text-center">{wallet?.saldo}</span>
             </div>
             <div className="flex flex-col items-center">
               <h3 className="text-coolGray">Total Premio</h3>
@@ -58,36 +65,27 @@ export const Profile = () => {
             <h3 className="text-center mb-4 p-4">Histórico</h3>
             <table className="w-full">
               <thead className="text-left text-[#c4c4c4] font-400 border-b border-coolGray border-solid">
-                <th>DATA</th>
-                <th>QUANTIDADE</th>
-                <th>STATUS</th>
-                <th>PREMIO</th>
+                <tr>
+                  <td>DATA</td>
+                  <td>QUANTIDADE</td>
+                  <td>NATUREZA</td>
+                  {/* <th>PREMIO</th> */}
+                </tr>
               </thead>
               <tbody className="">
-                <tr className="h-[3rem] border-b border-solid border-[#c4c4c4]">
-                  <td>30/06/2023</td>
-                  <td>200</td>
-                  <td>TERMINADO</td>
-                  <td>0</td>
-                </tr>
-                <tr className="h-[3rem]">
-                  <td>30/06/2023</td>
-                  <td>200</td>
-                  <td>TERMINADO</td>
-                  <td>0</td>
-                </tr>
-                <tr className="h-[3rem]">
-                  <td>30/06/2023</td>
-                  <td>200</td>
-                  <td>TERMINADO</td>
-                  <td>0</td>
-                </tr>
-                <tr className="h-[3rem]">
-                  <td>30/06/2023</td>
-                  <td>200</td>
-                  <td>TERMINADO</td>
-                  <td>0</td>
-                </tr>
+                {walletStatement?.map((statement) => {
+                  return (
+                    <tr
+                      className="h-[3rem] border-b border-solid border-[#c4c4c4]"
+                      key={statement.idTransacao}
+                    >
+                      <td>{DateConverter(statement.dataHoraTransacao)}</td>
+                      <td>{statement.valorTransacao}</td>
+                      <td>{statement.naturezaTransacao}</td>
+                      {/* <td>{statement.premio}</td> */}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

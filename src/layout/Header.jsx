@@ -1,11 +1,22 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../context/user';
+import WalletContext from '../context/wallet';
 
 export const Header = () => {
-  const { isUserAuthenticated } = useContext(UserContext);
-  console.log(isUserAuthenticated);
+  const { isUserAuthenticated, userId } = useContext(UserContext);
+
+  // console.log(isUserAuthenticated);
+  const { handleGetWalletValues } = useContext(WalletContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      handleGetWalletValues(userId);
+    };
+
+    fetchData();
+  }, [handleGetWalletValues, userId]);
   return (
     <header className="bg-[#2E1B86] h-[60px]">
       <div className="container ma flex items-center h-full justify-between">

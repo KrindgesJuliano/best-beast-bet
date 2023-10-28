@@ -1,16 +1,20 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
-import Grupos from '../../assets/grups.json';
+import Grupos from '../../assets/groups.json';
+
+import WalletContext from '../../context/wallet';
 
 export const Dashboard = () => {
+  const { wallet } = useContext(WalletContext);
+
   return (
     <div>
       <header className="flex justify-between items-center h-[60px]">
         <h1>Dashboard</h1>
         <div className="flex gap-2 items-baseline bg-white rounded-4 p-4">
           <p className="font-500">Carteira</p>{' '}
-          <span className="text-green text-xl font-700">350</span>
+          <span className="text-green text-xl font-700">{wallet?.saldo}</span>
         </div>
       </header>
       <div className="grid grid-cols-4 gap-4 mt-4">
