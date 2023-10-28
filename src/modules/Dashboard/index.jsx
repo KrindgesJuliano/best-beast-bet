@@ -4,16 +4,27 @@ import React, { useContext, useEffect } from 'react';
 import Grupos from '../../assets/groups.json';
 
 import WalletContext from '../../context/wallet';
+import UserContext from '../../context/user';
 
 export const Dashboard = () => {
-  const { wallet } = useContext(WalletContext);
+  const { userId } = useContext(UserContext);
+
+  const { wallet, handleGetWalletValues } = useContext(WalletContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      handleGetWalletValues(userId);
+    };
+
+    fetchData();
+  }, [handleGetWalletValues, userId]);
 
   return (
     <div>
       <header className="flex justify-between items-center h-[60px]">
         <h1>Dashboard</h1>
         <div className="flex gap-2 items-baseline bg-white rounded-4 p-4">
-          <p className="font-500">Carteira</p>{' '}
+          <p className="font-500">Carteira:</p>{' '}
           <span className="text-green text-xl font-700">{wallet?.saldo}</span>
         </div>
       </header>

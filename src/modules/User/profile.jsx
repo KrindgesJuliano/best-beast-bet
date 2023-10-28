@@ -9,8 +9,12 @@ import { DateConverter } from '../../utils/dateConverte';
 
 export const Profile = () => {
   const { handleGetUser, user, userId } = useContext(UserContext);
-  const { wallet, walletStatement, handleGetWalletStatement } =
-    useContext(WalletContext);
+  const {
+    wallet,
+    walletStatement,
+    handleGetWalletStatement,
+    handleGetWalletValues,
+  } = useContext(WalletContext);
 
   const [loading, setLoading] = useState(true);
 
@@ -20,10 +24,11 @@ export const Profile = () => {
     const fetchData = async () => {
       handleGetUser();
       handleGetWalletStatement(userId);
+      handleGetWalletValues(userId);
     };
     fetchData().catch((err) => console.log(err));
     setLoading(false);
-  }, [handleGetUser, handleGetWalletStatement, userId]);
+  }, [handleGetUser, handleGetWalletStatement, handleGetWalletValues, userId]);
 
   if (loading) {
     return <p>carregando</p>;
@@ -56,10 +61,10 @@ export const Profile = () => {
               <h3 className="text-coolGray">Total Carteira</h3>
               <span className="text-4xl text-center">{wallet?.saldo}</span>
             </div>
-            <div className="flex flex-col items-center">
+            {/* <div className="flex flex-col items-center">
               <h3 className="text-coolGray">Total Premio</h3>
               <span className="text-4xl text-center">150</span>
-            </div>
+            </div> */}
           </div>
           <div>
             <h3 className="text-center mb-4 p-4">Histórico</h3>
