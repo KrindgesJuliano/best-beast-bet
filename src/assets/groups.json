@@ -3,127 +3,152 @@
     {
       "grupo": 1,
       "animal": "Avestruz",
-      "numero": "01-02-03-04"
+      "numero": "01-02-03-04",
+      "imagem": "../../assets/animais/avestruz.png"
     },
     {
       "grupo": 2,
       "animal": "Águia",
-      "numero": "05-06-07-08"
+      "numero": "05-06-07-08",
+      "imagem": "../../assets/animais/aguia.png"
     },
     {
       "grupo": 3,
       "animal": "Burro",
-      "numero": "09-10-11-12"
+      "numero": "09-10-11-12",
+      "imagem": "../../assets/animais/burro.png"
     },
     {
       "grupo": 4,
       "animal": "Borboleta",
-      "numero": "13-14-15-16"
+      "numero": "13-14-15-16",
+      "imagem": "../../assets/animais/borboleta.png"
     },
     {
       "grupo": 5,
       "animal": "Cachorro",
-      "numero": "17-18-19-20"
+      "numero": "17-18-19-20",
+      "imagem": "../../assets/animais/cachorro.png"
     },
     {
       "grupo": 6,
       "animal": "Cabra",
-      "numero": "21-22-23-24"
+      "numero": "21-22-23-24",
+      "imagem": "../../assets/animais/cabra.png"
     },
     {
       "grupo": 7,
       "animal": "Carneiro",
-      "numero": "25-26-27-28"
+      "numero": "25-26-27-28",
+      "imagem": "../../assets/animais/ovelha.png"
     },
     {
       "grupo": 8,
       "animal": "Camelo",
-      "numero": "29-30-31-32"
+      "numero": "29-30-31-32",
+      "imagem": "../../assets/animais/camelo.png"
     },
     {
       "grupo": 9,
       "animal": "Cobra",
-      "numero": "33-34-35-36"
+      "numero": "33-34-35-36",
+      "imagem": "../../assets/animais/cobra.png"
     },
     {
       "grupo": 10,
       "animal": "Coelho",
-      "numero": "37-38-39-40"
+      "numero": "37-38-39-40",
+      "imagem": "../../assets/animais/coelho.png"
     },
     {
       "grupo": 11,
       "animal": "Cavalo",
-      "numero": "41-42-43-44"
+      "numero": "41-42-43-44",
+      "imagem": "../../assets/animais/cavalo.png"
     },
     {
       "grupo": 12,
       "animal": "Elefante",
-      "numero": "45-46-47-48"
+      "numero": "45-46-47-48",
+      "imagem": "../../assets/animais/elefante.png"
     },
     {
       "grupo": 13,
       "animal": "Galo",
-      "numero": "49-50-51-52"
+      "numero": "49-50-51-52",
+      "imagem": "../../assets/animais/galo.png"
     },
     {
       "grupo": 14,
       "animal": "Gato",
-      "numero": "53-54-55-56"
+      "numero": "53-54-55-56",
+      "imagem": "../../assets/animais/gato.png"
     },
     {
       "grupo": 15,
       "animal": "Jacaré",
-      "numero": "57-58-59-60"
+      "numero": "57-58-59-60",
+      "imagem": "../../assets/animais/jacare.png"
     },
     {
       "grupo": 16,
       "animal": "Leão",
-      "numero": "61-62-63-64"
+      "numero": "61-62-63-64",
+      "imagem": "../../assets/animais/leao.png"
     },
     {
       "grupo": 17,
       "animal": "Macaco",
-      "numero": "65-66-67-68"
+      "numero": "65-66-67-68",
+      "imagem": "../../assets/animais/macaco.png"
     },
     {
       "grupo": 18,
       "animal": "Porco",
-      "numero": "69-70-71-72"
+      "numero": "69-70-71-72",
+      "imagem": "../../assets/animais/porco.png"
     },
     {
       "grupo": 19,
       "animal": "Pavão",
-      "numero": "73-74-75-76"
+      "numero": "73-74-75-76",
+      "imagem": "../../assets/animais/pavao.png"
     },
     {
       "grupo": 20,
       "animal": "Peru",
-      "numero": "77-78-79-80"
+      "numero": "77-78-79-80",
+      "imagem": "../../assets/animais/peru.png"
     },
     {
       "grupo": 21,
       "animal": "Touro",
-      "numero": "81-82-83-84"
+      "numero": "81-82-83-84",
+      "imagem": "../../assets/animais/touro.png"
     },
     {
       "grupo": 22,
       "animal": "Tigre",
-      "numero": "85-86-87-88"
+      "numero": "85-86-87-88",
+      "imagem": "../../assets/animais/tigre.png"
     },
     {
       "grupo": 23,
       "animal": "Urso",
-      "numero": "89-90-91-92"
+      "numero": "89-90-91-92",
+      "imagem": "../../assets/animais/urso.png"
     },
     {
       "grupo": 24,
       "animal": "Veado",
-      "numero": "93-94-95-96"
+      "numero": "93-94-95-96",
+      "imagem": "../../assets/animais/veado.png"
     },
     {
       "grupo": 25,
       "animal": "Vaca",
-      "numero": "97-98-99-00"
+      "numero": "97-98-99-00",
+      "imagem": "../../assets/animais/vaca.png"
     }
   ]
 }
