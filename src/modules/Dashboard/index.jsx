@@ -6,7 +6,6 @@ import Modal from 'react-modal';
 import WalletContext from '../../context/wallet';
 import UserContext from '../../context/user';
 
-// import Avestruz from '../../assets/animais/avestruz.png';
 import Avestruz from '../../assets/animais/avestruz.png';
 import Aguia from '../../assets/animais/aguia.png';
 import Burro from '../../assets/animais/burro.png';
@@ -39,10 +38,11 @@ const customStyles = {
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    width: '30rem',
-    height: '20rem',
+    width: '20rem',
+    height: '15rem',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    zIndex: '99999',
   },
 };
 
@@ -205,6 +205,8 @@ export const Dashboard = () => {
   const [openModal, setOpenModal] = useState(false);
   const [betNumber, setBetNumber] = useState(0);
   const [betPoints, setBetPoints] = useState();
+  const [betResult, setBetResult] = useState();
+  const betId = localStorage.getItem('betId');
 
   const { userId } = useContext(UserContext);
 
@@ -221,9 +223,12 @@ export const Dashboard = () => {
           bettingPoints: Number(bettingPoints),
         })
         .then((res) => {
-          if (res.status === 201) {
+          if (res.status === 200) {
             handleGetWalletValues(userId);
             setOpenModal(false);
+            alert('aposta realizada com sucesso');
+            console.log('betId: ' + res.data[0]?.id);
+            localStorage.setItem('betId', res.data[0]?.id);
           }
         })
         .catch((err) => {
@@ -246,18 +251,38 @@ export const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       handleGetWalletValues(userId);
+      await axios
+        .get(`http://localhost:3030/api/v1/bets/${betId}/user/${userId}`)
+        .then((res) => {
+          console.log(res.data[0]);
+          setBetResult(res.data[0]);
+        })
+        .catch((err) => {
+          alert(err.response?.data);
+        });
     };
 
     fetchData();
-  }, [handleGetWalletValues, userId]);
+  }, [betId, handleGetWalletValues, userId]);
 
   return (
     <div>
       <header className="flex justify-between items-center h-[60px]">
         <h1>Dashboard</h1>
-        <div className="flex gap-2 items-baseline bg-white rounded-4 p-4">
-          <p className="font-500">Carteira:</p>{' '}
-          <span className="text-green text-xl font-700">{wallet?.saldo}</span>
+        <div className="flex gap2">
+          <div className="flex flex-col gap-2 items-baseline bg-white rounded-4 px-4">
+            <p>Resultado do ultimo sorteio</p>
+            <div className="flex justify-between">
+              <span>Numero: {betResult?.number} </span>
+              <span>Premio:{betResult?.prizeAmount}</span>
+            </div>
+          </div>
+          <div className="flex flex-col items-baseline bg-white rounded-4  px-4">
+            <p className="font-500">Carteira</p>
+            <span className="text-green text-3xl font-700 text-center w-full ">
+              {wallet?.saldo}
+            </span>
+          </div>
         </div>
       </header>
       <Modal
@@ -310,7 +335,7 @@ export const Dashboard = () => {
               <span className="font-700 text-4xl p2 text-black">
                 {grupo.grupo}
               </span>
-              <div className="bg-[#2E1B86] w-[100%] p2 flex justify-between z-1">
+              <div className="bg-[#2E1B86] w-[100%] p2 flex justify-between z-0">
                 <span className="text-xl">{grupo.animal}</span>
                 <span className="text-xl">{grupo.numero}</span>
               </div>

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import axios from 'axios';
 // eslint-disable-next-line no-unused-vars
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import UserContext from '../../context/user';
 import WalletContext from '../../context/wallet';
 import Logo from '../../assets/lion.png';

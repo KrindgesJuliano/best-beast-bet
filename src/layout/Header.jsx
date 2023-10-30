@@ -6,7 +6,9 @@ import UserContext from '../context/user';
 export const Header = () => {
   const { isUserAuthenticated } = useContext(UserContext);
 
-  // console.log(isUserAuthenticated);
+  const betId = localStorage.getItem('betId');
+
+  console.log(betId);
 
   return (
     <header className="bg-[#2E1B86] h-[60px]">
