@@ -13,7 +13,7 @@ export const User = () => {
   } = useForm();
   const onSubmit = async (data) => {
     await axios
-      .post('http://localhost:3000/api/v1/usuarios', data)
+      .post('https://bestbeastbet.vps.webdock.cloud/api/v1/usuarios', data)
       .then((res) => {
         console.log(res);
         setMessage(res.status);

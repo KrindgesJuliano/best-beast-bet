@@ -217,7 +217,7 @@ export const Dashboard = () => {
       // console.log(betNumber, bettingPoints);
 
       await axios
-        .post('http://localhost:3030/api/v1/bets', {
+        .post('https://bestbeastbet.vps.webdock.cloud/api/v1/bets', {
           userId,
           betNumber,
           bettingPoints: Number(bettingPoints),
@@ -252,7 +252,7 @@ export const Dashboard = () => {
     const fetchData = async () => {
       handleGetWalletValues(userId);
       await axios
-        .get(`http://localhost:3030/api/v1/bets/${betId}/user/${userId}`)
+        .get(`https://bestbeastbet.vps.webdock.cloud/api/v1/bets/${betId}/user/${userId}`)
         .then((res) => {
           console.log(res.data[0]);
           setBetResult(res.data[0]);
@@ -273,8 +273,8 @@ export const Dashboard = () => {
           <div className="flex flex-col gap-2 items-baseline bg-white rounded-4 px-4">
             <p>Resultado do ultimo sorteio</p>
             <div className="flex justify-between">
-              <span>Numero: {betResult?.number} </span>
-              <span>Premio:{betResult?.prizeAmount}</span>
+              <span> Numero: {betResult?.number} </span>
+              <span>&nbsp; - &nbsp; Premio: {betResult?.prizeAmount} </span>
             </div>
           </div>
           <div className="flex flex-col items-baseline bg-white rounded-4  px-4">

@@ -11,7 +11,7 @@ const WalletContextProvider = ({ children }) => {
 
   const handleGetWalletValues = useCallback(async (id) => {
     await axios
-      .get(`http://localhost:3001/api/v1/carteiras/${id}/saldo`)
+      .get(`https://bestbeastbet.vps.webdock.cloud/api/v1/carteiras/${id}/saldo`)
       .then((res) => {
         // console.log(res.data);
         setWallet(res.data);
@@ -24,7 +24,7 @@ const WalletContextProvider = ({ children }) => {
 
   const handleGetWalletStatement = useCallback(async (id) => {
     await axios
-      .get(`http://localhost:3001/api/v1/carteiras/${id}/extrato`)
+      .get(`https://bestbeastbet.vps.webdock.cloud/api/v1/carteiras/${id}/extrato`)
       .then((res) => {
         // console.log(res.data);
         setWalletStatement(res.data);
