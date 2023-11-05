@@ -37,7 +37,7 @@ const UserContextProvider = ({ children }) => {
 
   const handleGetUser = useCallback(async () => {
     await axios
-      .get(`http://localhost:3000/api/v1/usuarios/${userId}`, {
+      .get(`https://bestbeastbet.vps.webdock.cloud/api/v1/usuarios/${userId}`, {
         headers: {
           Authorization: 'Bearer ' + token,
           'user-id': userId,
@@ -51,7 +51,7 @@ const UserContextProvider = ({ children }) => {
   const handleLoginUser = useCallback(
     async (login, senha) => {
       await axios
-        .post('http://localhost:3000/api/seg/login', { login, senha })
+        .post('https://bestbeastbet.vps.webdock.cloud/api/seg/login', { login, senha })
         .then((res) => {
           saveToken(res.data.token);
           saveUserId(res.data.id);
